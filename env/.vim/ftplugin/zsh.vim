@@ -1,0 +1,1 @@
+/home/bsl/.vim/ftplugin/sh.vim

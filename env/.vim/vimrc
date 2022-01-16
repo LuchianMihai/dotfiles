@@ -1,0 +1,26 @@
+syntax on
+filetype plugin indent on
+set relativenumber
+set number
+set nowrap
+set viminfo+=n~/.cache/vim/viminfo
+set laststatus=2
+set shortmess+=c
+
+set tabstop=3
+set shiftwidth=3
+set expandtab
+set foldmethod=manual
+
+colorscheme elflord
+
+nnoremap <C-H> <C-w><C-h>
+nnoremap <C-J> <C-w><C-j>
+nnoremap <C-K> <C-w><C-k>
+nnoremap <C-L> <C-w><C-l>
+
+let maplocalleader = ","
+let mapleader = "\<Space>"
+
+nnoremap <leader>o :Files<CR>
+nnoremap <leader>b :Buffers<CR>

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ -d "$XDG_DATA_HOME/.mplab_ide" ]
+then
+   mv -f "$XDG_DATA_HOME/.mplab_ide" "$HOME/.mplab_ide"
+fi
+
+if ! pgrep "mplab_ipe" 
+then
+   mv -f "$XDG_DATA_HOME/.mplabcomm" "$HOME/.mplabcomm"
+   mv -f "$XDG_DATA_HOME/.mchp_packs" "$HOME/.mchp_packs"
+fi
+
+/usr/bin/mplab_ide
+mv "$HOME/.mplab_ide" "$XDG_DATA_HOME/.mplab_ide"
+
+if ! pgrep "mplab_ipe"
+then
+   mv "$HOME/.mplabcomm" "$XDG_DATA_HOME/.mplabcomm"
+   mv "$HOME/.mchp_packs" "$XDG_DATA_HOME/.mchp_packs"
+fi
