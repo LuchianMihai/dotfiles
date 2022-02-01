@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Numix</name>
+    <name>Adapta</name>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -109,6 +109,7 @@
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
+    <titleLayout>NLIMC</titleLayout>
   </theme>
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them
@@ -152,7 +153,7 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>26</top>
+    <top>5</top>
     <bottom>5</bottom>
     <left>5</left>
     <right>5</right>
@@ -202,7 +203,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-
     <keybind key="S-C-h">
       <action name="SendToDesktop">
         <to>left</to>
@@ -319,7 +319,6 @@
         <action name="Unfocus"/>
       </mousebind>
     </context>
-
     <context name="Left">
       <mousebind button="Left" action="Drag">
         <action name="Resize">
@@ -341,7 +340,6 @@
         </action>
       </mousebind>
     </context>
-
     <context name="TRCorner BRCorner TLCorner BLCorner">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
@@ -352,7 +350,6 @@
         <action name="Resize"/>
       </mousebind>
     </context>
-
     <context name="AllDesktops">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
@@ -363,7 +360,6 @@
         <action name="ToggleOmnipresent"/>
       </mousebind>
     </context>
-
     <context name="Shade">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
@@ -382,7 +378,6 @@
         <action name="Iconify"/>
       </mousebind>
     </context>
-
     <context name="Maximize">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
@@ -413,7 +408,6 @@
         </action>
       </mousebind>
     </context>
-
     <context name="Close">
       <mousebind button="Left" action="Press">
         <action name="Focus"/>
@@ -444,7 +438,6 @@
         <action name="Raise"/>
       </mousebind>
     </context>
-
     <context name="Root">
       <!-- Menus -->
       <mousebind button="Middle" action="Press">
@@ -458,8 +451,10 @@
         </action>
       </mousebind>
     </context>
+    <context name="Titlebar">
+      <mousebind button="Left" action="DoubleClick"/>
+    </context>
   </mouse>
-
   <menu>
     <!-- You can specify more than one menu file in here and they are all loaded,
        just don't make menu ids clash or, well, it'll be kind of pointless -->
@@ -486,7 +481,8 @@
     <manageDesktops>yes</manageDesktops>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
-  <applications><!--
+  <applications>
+    <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
   # you may use one or more of the name/class/role/title/type rules to specify
@@ -580,6 +576,8 @@
 
   # end of the example
   -->
-  <application class="*"><decor>no</decor></application>
-</applications>
+    <application class="*">
+      <decor>no</decor>
+    </application>
+  </applications>
 </openbox_config>

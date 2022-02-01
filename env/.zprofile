@@ -1,16 +1,20 @@
 #!/bin/sh
 
-# zprofile will not be sourced if GDM is used
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
-# export WM="GNOME"
+# X11
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XSERVERRC="$XDG_CONFIG_HOME/X11/xserverrc"
+export XAUTHORITY="$XDG_DATA_HOME/Xauthority"
 
-# needed for DWM
-if [ "$WM" = "DWM" ]
-then
-   export _JAVA_AWT_WM_NONREPARENTING=1
-   export QT_QPA_PLATFORMTHEME=gtk2
-   export QT_STYLE_OVERRIDE=gtk2
-fi
+# GTK
+# move .gtkrc-1.0
+export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
+# move .gtkrc-2.0
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 
 # set zsh config dir
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"

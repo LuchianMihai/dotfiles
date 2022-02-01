@@ -5,15 +5,10 @@
 	path = env/.config/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 
-[submodule "env/.local/share/nvim/site/pack/lm/start/nvim-lspconfig"]
-	path = env/.local/share/nvim/site/pack/lm/start/nvim-lspconfig
-	url = https://github.com/neovim/nvim-lspconfig
-[submodule "env/.local/share/nvim/site/pack/lm/start/nvim-treesitter"]
-	path = env/.local/share/nvim/site/pack/lm/start/nvim-treesitter
-	url = https://github.com/nvim-treesitter/nvim-treesitter
-[submodule "env/.local/share/nvim/site/pack/lm/start/telescope.nvim"]
-	path = env/.local/share/nvim/site/pack/lm/start/telescope.nvim
-	url = https://github.com/nvim-telescope/telescope.nvim
-[submodule "env/.local/share/nvim/site/pack/lm/start/plenary.nvim"]
-	path = env/.local/share/nvim/site/pack/lm/start/plenary.nvim
-	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "env/.local/share/nvim/site/pack/lm/start/packer.nvim"]
+	path = env/.local/share/nvim/site/pack/lm/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
+
+[submodule "repos/lxqt-less-theme"]
+	path = repos/lxqt-less-theme
+	url = https://gitlab.com/isseigx/lxqt-less-theme

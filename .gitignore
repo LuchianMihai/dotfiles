@@ -1,0 +1,7 @@
+
+env/.local/share/nvim/site/pack/packer/start
+env/.local/share/nvim/swap
+env/.local/share/nvim/.netrwhist
+env/.local/share/nvim/rplugin.vim
+env/.local/share/nvim/telescope_history
+env/.config/nvim/plugin
