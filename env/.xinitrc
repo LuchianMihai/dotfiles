@@ -1,5 +1,4 @@
-
-session=awesome
+session=bspwm
 
 case $session in
    i3|i3wm)
@@ -23,5 +22,8 @@ case $session in
       ;;
    awesome)
       exec awesome
+      ;;
+   bspwm)
+      exec bspwm
       ;;
 esac

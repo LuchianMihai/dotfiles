@@ -12,3 +12,9 @@
 [submodule "repos/lxqt-less-theme"]
 	path = repos/lxqt-less-theme
 	url = https://gitlab.com/isseigx/lxqt-less-theme
+[submodule "openbox/.local/share/themes/arc-openbox"]
+	path = openbox/.local/share/themes/arc-openbox
+	url = https://github.com/dglava/arc-openbox
+[submodule "repos/arc-openbox"]
+	path = repos/arc-openbox
+	url = https://github.com/dglava/arc-openbox
