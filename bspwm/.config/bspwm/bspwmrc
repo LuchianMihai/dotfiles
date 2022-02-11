@@ -1,17 +1,16 @@
 #! /bin/sh
 
-sxhkd &
-dunst &
-$XDG_CONFIG_HOME/bspwm/lemonbar_data | lemonbar -n "lemonbar" &
+. "${HOME}/.zprofile"
+xsetroot -cursor_name left_ptr
+hsetroot -extend "${HOME}/dotfiles/wallpaper/gnu.png"
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4
 
 bspc config border_width         2
-bspc config window_gap          12
+bspc config window_gap          10
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-
+bspc config gapless_monocle      false
