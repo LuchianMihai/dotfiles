@@ -1,19 +1,9 @@
 #!/bin/sh
-
-if [ -d "$XDG_DATA_HOME/.stm32cubemx" ] && 
-   [ -d "$XDG_DATA_HOME/.stmcube" ] && 
-   [ -d "$XDG_DATA_HOME/.stmcufinder" ] 
-then
-   mv -f "$XDG_DATA_HOME/.stm32cubemx" "$HOME/.stm32cubemx"
-   mv -f "$XDG_DATA_HOME/.stmcube" "$HOME/.stmcube"
-   mv -f "$XDG_DATA_HOME/.stmcufinder" "$HOME/.stmcufinder"
-   /usr/bin/stm32cubemx
-   mv "$HOME/.stm32cubemx" "$XDG_DATA_HOME/.stm32cubemx"
-   mv "$HOME/.stmcube" "$XDG_DATA_HOME/.stmcube"
-   mv "$HOME/.stmcufinder" "$XDG_DATA_HOME/.stmcufinder"
-else
-   /usr/bin/stm32cubemx
-   mv "$HOME/.stm32cubemx" "$XDG_DATA_HOME/.stm32cubemx"
-   mv "$HOME/.stmcube" "$XDG_DATA_HOME/.stmcube"
-   mv "$HOME/.stmcufinder" "$XDG_DATA_HOME/.stmcufinder"
-fi
+systemd-nspawn \
+   --setenv=DISPLAY="${DISPLAY}" \
+   --bind=/dev/dri --bind=/dev/shm \
+   --bind="/tmp/.X11-unix" \
+   --bind="$1/Projects" \
+   -D /var/lib/machines/dev \
+   --as-pid2 --user dev \
+   stm32cubemx

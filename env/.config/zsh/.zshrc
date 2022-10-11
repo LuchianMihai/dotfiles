@@ -18,6 +18,4 @@ HISTSIZE=1000
 }
 
 alias v="nvim"
-
-# LXQt sets QT_QPA_PLATFORMTHEME=lxqt
-alias cmake-gui="export QT_QPA_PLATFORMTHEME=qt6gtk2 && cmake-gui"
+alias esp-idf-start=". '$XDG_DATA_HOME/scripts/esp-idf'"

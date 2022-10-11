@@ -7,3 +7,6 @@ env/.local/share/nvim/telescope_history
 env/.config/nvim/plugin
 env/.vim
 wallpapers
+env/.local/bin/virtualenv
+env/.config/nvim/tags
+env/.local/share/nvim/lsp_servers

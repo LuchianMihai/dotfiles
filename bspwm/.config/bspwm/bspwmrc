@@ -2,8 +2,9 @@
 
 . "${HOME}/.zprofile"
 xsetroot -cursor_name left_ptr
-hsetroot -extend "${HOME}/dotfiles/wallpaper/gnu.png"
+hsetroot -extend $(gsettings get org.gnome.desktop.background picture-uri | sed "s/'//g" | sed "s/^file:\/\///")
 
+#polybar main
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 1 2 3 4
