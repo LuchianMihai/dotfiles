@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
   require('toggleterm').setup{
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<c-t>]],
     hide_numbers = true,
     start_in_insert = true,
     insert_mappings = true,
@@ -13,7 +13,7 @@ M.setup = function()
     shell = vim.o.shell,
     -- This field is only relevant if direction is set to 'float'
     float_opts = {
-      border = 'single',
+      border = 'rounded',
       width = math.floor(vim.o.columns * 0.8),
       heigth = math.floor(vim.o.lines * 0.8)
     }
@@ -26,24 +26,45 @@ M.lazygit = Terminal:new({
   cmd = 'lazygit',
   dir = vim.fn.getcwd(),
   hidden = true,
-  direction = 'float'
+  direction = 'float',
+  float_opts = {
+    border = "rounded",
+  },
 })
 
 M.python3 = Terminal:new({
   cmd = 'python3',
   dir = vim.fn.getcwd(),
-  direction = 'float'
+  direction = 'float',
+  float_opts = {
+    border = "rounded",
+  },
 })
 
 M.espidf = Terminal:new({
-  cmd = 'source espidfws',
+  cmd = 'esp-idf-start',
   dir = vim.fn.getcwd(),
-  direction = 'float'
+  direction = 'float',
+  float_opts = {
+    border = "rounded",
+  },
 })
 
 M.shell = Terminal:new({
   dir = vim.fn.getcwd(),
-  direction = 'float'
+  direction = 'float',
+  float_opts = {
+    border = "rounded",
+  },
+})
+
+M.xplr = Terminal:new({
+  cmd = 'xplr',
+  dir = vim.fn.getcwd(),
+  direction = 'float',
+  float_opts = {
+    border = "rounded",
+  },
 })
 
 M.keybind = function ()
@@ -63,7 +84,10 @@ M.keybind = function ()
   'n', '<Leader>\\t', [[<cmd>lua require("l-toggleterm").shell:toggle()<cr>]],
   { noremap = true, silent = true }
   )
-
+  vim.api.nvim_set_keymap(
+  'n', '<Leader>\\x', [[<cmd>lua require("l-toggleterm").xplr:toggle()<cr>]],
+  { noremap = true, silent = true }
+  )
 end
 
 return M

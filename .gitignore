@@ -10,3 +10,5 @@ wallpapers
 env/.local/bin/virtualenv
 env/.config/nvim/tags
 env/.local/share/nvim/lsp_servers
+env/.config/zsh/.zcompdump
+env/.config/zsh/.zcompdump

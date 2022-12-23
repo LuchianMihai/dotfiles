@@ -8,6 +8,8 @@ return require('packer').startup({
 
     use {
       'wbthomason/packer.nvim',
+      require = {
+      }
     }
 
     use {
@@ -94,7 +96,7 @@ return require('packer').startup({
   config = {
     display = {
       open_fn = function()
-        return require('packer.util').float({ border = 'single' })
+        return require('packer.util').float({ border = 'rounded' })
       end
     }
   }

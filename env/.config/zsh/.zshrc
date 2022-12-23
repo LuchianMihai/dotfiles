@@ -15,7 +15,9 @@ HISTSIZE=1000
 {
    . "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
    . "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+   . "$XDG_CONFIG_HOME/broot/launcher/bash/br"
 }
 
 alias v="nvim"
-alias esp-idf-start=". '$XDG_DATA_HOME/scripts/esp-idf'"
+alias esp-idf-start="PROMPT='(esp-idf) $PROMPT' && . '$HOME/Projects/esp-idf/export.sh'"
+
