@@ -1,17 +1,13 @@
-[submodule "env/.config/zsh/zsh-autosuggestions"]
-	path = env/.config/zsh/zsh-autosuggestions
+[submodule "zsh/.config/zsh/zsh-autosuggestions"]
+	path = zsh/.config/zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "env/.config/zsh/zsh-syntax-highlighting"]
-	path = env/.config/zsh/zsh-syntax-highlighting
+[submodule "zsh/.config/zsh/zsh-syntax-highlighting"]
+	path = zsh/.config/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-
-[submodule "env/.local/share/nvim/site/pack/lm/start/packer.nvim"]
-	path = env/.local/share/nvim/site/pack/lm/start/packer.nvim
-	url = https://github.com/wbthomason/packer.nvim
 
 [submodule "repos/lxqt-less-theme"]
 	path = repos/lxqt-less-theme
-	url = https://gitlab.com/isseigx/lxqt-less-theme
+	url = https://gitlab.com/isseigx/lxqt-less-theme.git
 [submodule "openbox/.local/share/themes/arc-openbox"]
 	path = openbox/.local/share/themes/arc-openbox
 	url = https://github.com/dglava/arc-openbox

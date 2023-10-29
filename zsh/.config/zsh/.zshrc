@@ -18,6 +18,13 @@ HISTSIZE=1000
    . "$XDG_CONFIG_HOME/broot/launcher/bash/br"
 }
 
-alias v="nvim"
-alias esp-idf-start="PROMPT='(esp-idf) $PROMPT' && . '$HOME/Projects/esp-idf/export.sh'"
+export BSL_DIR="${HOME}/Projects/bsl"
+export IDF_TOOLS_PATH="${XDG_DATA_HOME}/espressif"
 
+alias v="nvim"
+
+# here we have an hack, start-esp-idf is also an script at ${HOME}/.local/bin
+alias start-esp-idf="source start-esp-idf"
+
+source "/home/bsl/.config/broot/launcher/bash/br"
+source "${ZDOTDIR}/.zshlocal"

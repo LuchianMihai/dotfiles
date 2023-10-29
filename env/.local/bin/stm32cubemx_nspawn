@@ -1,0 +1,6 @@
+#!/bin/sh
+systemd-nspawn \
+--directory=/var/lib/machines/embedded \
+--user=dev \
+--setenv=DISPLAY=$DISPLAY \
+--as-pid2 stm32cubemx

@@ -12,3 +12,10 @@ env/.config/nvim/tags
 env/.local/share/nvim/lsp_servers
 env/.config/zsh/.zcompdump
 env/.config/zsh/.zcompdump
+env/.local/share/nvim/lazy
+env/.local/share/nvim/mason
+env/.local/share/nvim
+env/.local/share/nvim/site/pack/lm/start
+env/.local/share/nvim/site/pack/lm/start
+env/.local/share
+env/.local/share

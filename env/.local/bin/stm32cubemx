@@ -1,9 +1,0 @@
-#!/bin/sh
-systemd-nspawn \
-   --setenv=DISPLAY="${DISPLAY}" \
-   --bind=/dev/dri --bind=/dev/shm \
-   --bind="/tmp/.X11-unix" \
-   --bind="$1/Projects" \
-   -D /var/lib/machines/dev \
-   --as-pid2 --user dev \
-   stm32cubemx
