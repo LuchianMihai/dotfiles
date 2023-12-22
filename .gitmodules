@@ -4,7 +4,6 @@
 [submodule "zsh/.config/zsh/zsh-syntax-highlighting"]
 	path = zsh/.config/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-
 [submodule "repos/lxqt-less-theme"]
 	path = repos/lxqt-less-theme
 	url = https://gitlab.com/isseigx/lxqt-less-theme.git

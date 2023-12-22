@@ -18,7 +18,7 @@ HISTSIZE=1000
    . "$XDG_CONFIG_HOME/broot/launcher/bash/br"
 }
 
-export BSL_DIR="${HOME}/Projects/bsl"
+export BSL_DIR="${HOME}/Nextcloud/Electronics"
 export IDF_TOOLS_PATH="${XDG_DATA_HOME}/espressif"
 
 alias v="nvim"
@@ -28,3 +28,4 @@ alias start-esp-idf="source start-esp-idf"
 
 source "/home/bsl/.config/broot/launcher/bash/br"
 source "${ZDOTDIR}/.zshlocal"
+source "/usr/share/fzf/completion.zsh"

@@ -10,5 +10,6 @@ return {
     popup_input = {
       prompt = ""
     }
-  }
+  },
+  enabled = false
 }

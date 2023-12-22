@@ -11,12 +11,6 @@ return {
       desc = "fterm toogle"
     },
     {
-      '<leader>\\t',
-      function() require("FTerm").toggle() end,
-      mode = "t",
-      desc = "fterm toogle"
-    },
-    {
       '<leader>\\g',
       function() require("FTerm").scratch({cmd = 'lazygit'}) end,
       mode = "n",

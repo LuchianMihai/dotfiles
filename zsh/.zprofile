@@ -7,6 +7,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+export GNUPGHOME="$XDG_DATA_HOME/.gnupg"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
 # X11
 # Using Gnome/Wayland but export it only once for compatibility with X11
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
