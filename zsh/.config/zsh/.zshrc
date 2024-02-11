@@ -15,11 +15,8 @@ HISTSIZE=1000
 {
    . "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
    . "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
-   . "$XDG_CONFIG_HOME/broot/launcher/bash/br"
+   # . "$XDG_CONFIG_HOME/broot/launcher/bash/br"
 }
-
-export BSL_DIR="${HOME}/Nextcloud/Electronics"
-export IDF_TOOLS_PATH="${XDG_DATA_HOME}/espressif"
 
 alias v="nvim"
 

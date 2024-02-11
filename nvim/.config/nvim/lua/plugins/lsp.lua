@@ -1,40 +1,48 @@
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile"},
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "mason.nvim",
     "mason-lspconfig.nvim"
   },
-  keys = {
+ keys = {
     -- Global mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    {'<space>e', function() vim.diagnostic.openfloat() end, mode='n'},
-    {'[d', function() vim.diagnostic.goto_prev() end, mode='n'},
-    {']d', function() vim.diagnostic.goto_next() end, mode='n'},
-    {'<space>q', function() vim.diagnostic.setloclist() end, mode='n'}
+    { '<space>e', function() vim.diagnostic.openfloat() end,  mode = 'n' },
+    { '[d',       function() vim.diagnostic.goto_prev() end,  mode = 'n' },
+    { ']d',       function() vim.diagnostic.goto_next() end,  mode = 'n' },
+    { '<space>q', function() vim.diagnostic.setloclist() end, mode = 'n' }
   },
-  config = function()
 
+  config = function()
     -- Setup language servers.
     local lspconfig = require('lspconfig')
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
     require('lspconfig.ui.windows').default_options.border = 'rounded'
 
-    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-      opts = opts or {}
-      opts.border = 'rounded'
-      return orig_util_open_floating_preview(contents, syntax, opts, ...)
-    end
+    -- why do I need this?
+    -- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    -- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    --   opts = opts or {}
+    --   opts.border = 'rounded'
+    --   return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    -- end
 
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
-        -- Enable completion triggered by <c-x><c-o>
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        -- Disable completion triggered by <c-x><c-o>
+        vim.bo[ev.buf].omnifunc = nil
+
+        -- Disable tagfunc triggered by CTRL-], CTRL-W_], CTRL-W_}
+        vim.bo[ev.buf].tagfunc = nil
+
+        -- Disable formatexpr
+        -- vim.bo[ev.buf].formatexpr = nil
 
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -75,6 +83,7 @@ return {
         "--background-index",
         "--clang-tidy",
       },
+      capabilities = capabilities
     }
 
     lspconfig.lua_ls.setup {
@@ -106,7 +115,8 @@ return {
           client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
         end
         return true
-      end
+      end,
+      capabilities = capabilities
     }
 
 

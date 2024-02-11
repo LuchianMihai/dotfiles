@@ -14,6 +14,10 @@ export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 # move .jupyter dir
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 
+export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
+
+export PYTHONUSERBASE=$XDG_DATA_HOME/python
+
 # move libice .ICEauthority file location
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 # move .pylint.d dir
@@ -36,3 +40,8 @@ export PLATFORMIO_CORE_DIR="$XDG_DATA_HOME/platformio"
 export IDF_TOOLS_PATH="$XDG_DATA_HOME/esp-idf/espressif"
 
 export QUCSDIR="$XDG_DATA_HOME/qucs"
+
+export BSL_DIR="${HOME}/Nextcloud/Electronics"
+export IDF_TOOLS_PATH="${XDG_DATA_HOME}/espressif"
+
+export ZEPHYR_BASE="${HOME}/Projects/zephyrproject"
