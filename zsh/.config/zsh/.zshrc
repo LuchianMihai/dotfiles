@@ -30,3 +30,4 @@ alias start-esp-idf="source start-esp-idf"
 alias start-zephyros="source ${ZEPHYR_BASE}/.zephyr-env/bin/activate &&\
                       source ${ZEPHYR_BASE}/zephyr/zephyr-env.sh"
 
+eval "$(starship init zsh)"
