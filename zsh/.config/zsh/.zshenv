@@ -45,3 +45,6 @@ export BSL_DIR="${HOME}/Nextcloud/Electronics"
 export IDF_TOOLS_PATH="${XDG_DATA_HOME}/espressif"
 
 export ZEPHYR_BASE="${HOME}/Projects/zephyrproject"
+
+export MAIL="${XDG_DATA_HOME}/Mail"
+export EDITOR="nvim"

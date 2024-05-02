@@ -15,7 +15,6 @@ HISTSIZE=1000
 {
   . "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   . "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  . "$XDG_CONFIG_HOME/broot/launcher/bash/br"
   . "${ZDOTDIR}/.zshlocal"
   . "/usr/share/fzf/completion.zsh"
 }
@@ -25,9 +24,11 @@ alias v="nvim"
 # not really plan to use svn outside Blue Streamline, can stay here
 alias svn="svn --config-dir \"$XDG_CONFIG_HOME\"/subversion"
 
-# here we have an hack, start-esp-idf is also an script at ${HOME}/.local/bin
-alias start-esp-idf="source start-esp-idf"
-alias start-zephyros="source ${ZEPHYR_BASE}/.zephyr-env/bin/activate &&\
-                      source ${ZEPHYR_BASE}/zephyr/zephyr-env.sh"
+alias start-esp-idf="\
+  source ${XDG_DATA_HOME}/espressif/python_env/idf5.2_py3.11_env/bin/activate &&\
+  source ${XDG_DATA_HOME}/esp-idf/export.sh"
+alias start-zephyros="\
+  source ${ZEPHYR_BASE}/.zephyr-env/bin/activate &&\
+  source ${ZEPHYR_BASE}/zephyr/zephyr-env.sh"
 
 eval "$(starship init zsh)"

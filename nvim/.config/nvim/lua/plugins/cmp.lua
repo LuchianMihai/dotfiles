@@ -38,11 +38,11 @@ return {
           ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
+          { name = 'codeium' },
           { name = 'nvim_lsp' },
-          { name = 'luasnip' }, -- For luasnip users.
-        }, {
-            { name = 'buffer' },
-          }),
+          -- { name = 'luasnip' },
+          -- { name = 'buffer' },
+        }),
         formatting = {
           format = function(entry, vim_item)
             -- Source
@@ -50,7 +50,8 @@ return {
               buffer = "[Buffer]",
               nvim_lsp = "[LSP]",
               luasnip = "[LuaSnip]",
-              nvim_lua = "[Lua]"
+              nvim_lua = "[Lua]",
+              codeium =  "[AI]"
             })[entry.source.name]
             return vim_item
           end,

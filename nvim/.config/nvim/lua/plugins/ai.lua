@@ -14,7 +14,8 @@ return {
         auto_trigger = true,
         accept = true,
       },
-    }
+    },
+    enabled = false
   },
   {
     "jackMort/ChatGPT.nvim",
@@ -30,5 +31,16 @@ return {
       }
     },
     enabled = false
-  }
+  },
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
+  },
 }
