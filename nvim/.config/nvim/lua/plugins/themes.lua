@@ -1,15 +1,17 @@
 return {
   {
-      "ellisonleao/gruvbox.nvim",
-      lazy = false,
-      name = "gruvbox",
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    name = "gruvbox",
     priority = 1000, -- make sure to load this before all the other start plugins
-      config = function()
-        vim.cmd.colorscheme('gruvbox')
+    config = function()
+      vim.cmd.colorscheme('gruvbox')
+      if vim.g.neovide ~= true then
         vim.cmd.highlight('Normal guibg=NONE ctermbg=NONE')
         vim.cmd.highlight('NormalFloat guibg=NONE')
         vim.cmd.highlight('FloatBorder guibg=NONE')
       end
+    end
   },
   {
     "catppuccin/nvim",
@@ -17,10 +19,10 @@ return {
     name = "catppuccin",
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-        vim.cmd.colorscheme('catppuccin')
-        vim.cmd.highlight('Normal guibg=NONE ctermbg=NONE')
-        vim.cmd.highlight('NormalFloat guibg=NONE')
-        vim.cmd.highlight('FloatBorder guibg=NONE')
+      vim.cmd.colorscheme('catppuccin')
+      vim.cmd.highlight('Normal guibg=NONE ctermbg=NONE')
+      vim.cmd.highlight('NormalFloat guibg=NONE')
+      vim.cmd.highlight('FloatBorder guibg=NONE')
     end,
     opts = {
       integrations = {

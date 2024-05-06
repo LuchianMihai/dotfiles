@@ -10,6 +10,16 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.g.mapleader = ","
+vim.g.neovide_gui = 'auto'
+
+if vim.g.neovide then
+  vim.g.neovide_padding_top = 3
+  vim.g.neovide_padding_bottom = 3
+  vim.g.neovide_padding_right = 3
+  vim.g.neovide_padding_left = 3
+
+  vim.o.guifont = "Fira Code:h11"
+end
 
 vim.api.nvim_create_autocmd(
   "TermOpen",

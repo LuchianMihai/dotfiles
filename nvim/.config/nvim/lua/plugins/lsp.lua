@@ -7,11 +7,11 @@ return {
   },
  keys = {
     -- Global mappings.
-    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    { '<space>e', function() vim.diagnostic.openfloat() end,  mode = 'n' },
-    { '[d',       function() vim.diagnostic.goto_prev() end,  mode = 'n' },
-    { ']d',       function() vim.diagnostic.goto_next() end,  mode = 'n' },
-    { '<space>q', function() vim.diagnostic.setloclist() end, mode = 'n' }
+    -- See `:help vim.diagnostic.*` for documentation on any of the below functionsls
+    { '<space>e', function() vim.diagnostic.openfloat() end,  mode = 'n', desc = "lsp diagnostics open float"},
+    { '[d',       function() vim.diagnostic.goto_prev() end,  mode = 'n', desc = "lsp diagnostics prev"},
+    { ']d',       function() vim.diagnostic.goto_next() end,  mode = 'n', desc = "lsp diagnostics next"},
+    { '<space>q', function() vim.diagnostic.setloclist() end, mode = 'n', desc = "lsp diagnostics setloclist"},
   },
 
   config = function()
