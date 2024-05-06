@@ -5,6 +5,8 @@ const battery = await Service.import("battery")
 const systemtray = await Service.import("systemtray")
 const { GLib } = imports.gi
 
+import { NotificationPopups } from "./notificationPopups.js"
+
 // widgets can be only assigned as a child in one container
 // so to make a reuseable widget, make it a function
 // then you can simply instantiate one by calling it
@@ -40,27 +42,6 @@ const Clock = () =>
       label.label = GLib.DateTime.new_now_local().format("%T (%a) %d %b %y")
     })
   })
-
-
-
-// we don't need dunst or any other notification daemon
-// because the Notifications module is a notification daemon itself
-function Notification() {
-  const popups = notifications.bind("popups")
-  return Widget.Box({
-    class_name: "notification",
-    visible: popups.as(p => p.length > 0),
-    children: [
-      Widget.Icon({
-        icon: "preferences-system-notifications-symbolic",
-      }),
-      Widget.Label({
-        label: popups.as(p => p[0]?.summary || ""),
-      }),
-    ],
-  })
-}
-
 
 function Volume() {
   const icons = {
@@ -107,7 +88,6 @@ const BatteryLabel = () =>
     vpack: "center",
     visible: battery.bind("available"),
     children: [
-
       Widget.Box({
         hpack: "center",
         children: [
@@ -115,14 +95,12 @@ const BatteryLabel = () =>
             icon: 'ac-adapter-symbolic',
             visible: battery.bind("charging")
           }),
-
           Widget.Icon({
             icon: battery.bind("percent").as(p => 
               `battery-level-${Math.floor(p / 10) * 10}-symbolic`)
           }),
         ]
       }),
-
       Widget.Label().hook(battery,
         self => {
           self.label = `${battery.percent}%`
@@ -163,7 +141,6 @@ function Center() {
   return Widget.Box({
     spacing: 8,
     children: [
-      Notification(),
       Clock()
     ],
   })
@@ -181,7 +158,7 @@ function Right() {
   })
 }
 
-function Bar(monitor = 0) {
+function Bar(monitor) {
   return Widget.Window({
     name: `bar-${monitor}`, // name has to be unique
     class_name: "bar",
@@ -200,10 +177,7 @@ App.config({
   style: "./style.css",
   windows: [
     Bar(),
-
-    // you can call it, for each monitor
-    // Bar(0),
-    // Bar(1)
+    NotificationPopups()
   ],
 })
 
