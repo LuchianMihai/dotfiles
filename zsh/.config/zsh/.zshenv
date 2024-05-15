@@ -48,3 +48,5 @@ export ZEPHYR_BASE="${HOME}/Projects/zephyrproject"
 
 export MAIL="${XDG_DATA_HOME}/Mail"
 export EDITOR="nvim"
+
+export GOPATH="${XDG_DATA_HOME}/go"
