@@ -1,0 +1,12 @@
+[Unit]
+Description=zellij sesion started at login by systemd
+Documentation=man:zellij(1)
+BindsTo=hyprland-session.target
+After=hyprland-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/zellij setup --generate-auto-start zsh
+
+[Install]
+WantedBy=hyprland-session.target

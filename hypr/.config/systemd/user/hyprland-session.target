@@ -1,0 +1,9 @@
+[Unit]
+Description=Hyprland compositor session target
+Documentation=man:systemd.special(7)
+Partof=graphical-session.target
+#After=graphical-session.target
+Requires=gnome-keyring-daemon.socket
+Requires=org.gnome.SettingsDaemon.Rfkill.service
+Requires=org.gnome.SettingsDaemon.Power.service
+

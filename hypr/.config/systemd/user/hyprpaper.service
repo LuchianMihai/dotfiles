@@ -1,0 +1,12 @@
+[Unit]
+Description=Hyprpaper is a blazing fast wallpaper utility for Hyprland
+Documentation=https://github.com/hyprwm/hyprpaper
+BindsTo=hyprland-session.target
+After=hyprland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hyprpaper
+
+[Install]
+WantedBy=hyprland-session.target

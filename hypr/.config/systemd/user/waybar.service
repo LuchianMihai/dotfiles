@@ -1,0 +1,11 @@
+[Unit]
+Description=Highly customizable Wayland bar for Sway and Wlroots based compositors.
+BindsTo=hyprland-session.target
+After=hyprland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar
+
+[Install]
+WantedBy=hyprland-session.target

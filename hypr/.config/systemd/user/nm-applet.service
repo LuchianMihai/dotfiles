@@ -1,0 +1,12 @@
+[Unit]
+Description=NetworkManager applet service
+Documentation=man:nm-applet(1)
+BindsTo=hyprland-session.target
+After=hyprland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nm-applet
+
+[Install]
+WantedBy=hyprland-session.target

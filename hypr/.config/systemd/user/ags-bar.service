@@ -1,0 +1,11 @@
+[Unit]
+Description=ags bar
+BindsTo=hyprland-session.target
+After=hyprland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ags -c ${HOME}/.config/ags/config.js
+
+[Install]
+WantedBy=hyprland-session.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=GTK+ Bluetooth Manager applet service
+Documentation=man:blueman-applet(1)
+BindsTo=hyprland-session.target
+After=hyprland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/blueman-applet
+
+[Install]
+WantedBy=hyprland-session.target

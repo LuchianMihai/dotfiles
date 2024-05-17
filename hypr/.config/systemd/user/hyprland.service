@@ -1,0 +1,15 @@
+[Unit]
+Description=Hyprland - Wayland window manager
+#BindsTo=hyprland-session.target
+Requires=graphical-session.target
+After=graphical-session.target
+Before=hyprland-session.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/hypr/env
+ExecStartPre=systemctl --user unset-environment WAYLAND_DISPLAY DISPLAY
+ExecStart=/usr/bin/Hyprland
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
