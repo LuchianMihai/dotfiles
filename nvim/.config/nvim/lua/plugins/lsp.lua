@@ -80,6 +80,15 @@ return {
       end,
     })
 
+    lspconfig.clangd.setup{
+      cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+      },
+      capabilities = require'cmp_nvim_lsp'.default_capabilities()
+    }
+
     lspconfig.lua_ls.setup {
       on_init = function(client)
         local path = client.workspace_folders[1].name
@@ -112,7 +121,6 @@ return {
       end,
       capabilities = capabilities
     }
-
 
   end
 }

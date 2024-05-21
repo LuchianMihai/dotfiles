@@ -1,11 +1,18 @@
-local lspconfig = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require'dap'.adapters.gdb = {
+  type = "executable",
+  command = "gdb",
+  args = { "-i", "dap" }
+}
 
-lspconfig.clangd.setup{
-  cmd = {
-    "clangd",
-    "--background-index",
-    "--clang-tidy",
+require'dap'.configurations.c = {
+  {
+    name = "Native GDB Launch",
+    type = "gdb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = true,
   },
-  capabilities = capabilities
 }

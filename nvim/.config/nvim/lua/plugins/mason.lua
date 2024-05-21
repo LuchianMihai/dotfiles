@@ -8,6 +8,10 @@ return {
     }
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    lazy = true
+  },
+  {
     "williamboman/mason.nvim",
     cmd = "Mason",
     build = ":MasonUpdate",
