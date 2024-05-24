@@ -7,12 +7,20 @@ return {
       vim.opt.timeoutlen = 300
     end,
     opts = {
-      key_labels = {
-      },
       window = {
         border = "rounded"
       }
     }
+  },
+  {
+    'stevearc/oil.nvim',
+    enabled = false,
+    opts = {
+      float = {
+        max_width = { 40, 0.8 },
+        max_height = { 40, 0.8 },
+      }
+    },
   },
   {
     "numToStr/FTerm.nvim",
@@ -21,24 +29,17 @@ return {
     },
     keys = {
       {
-        '<leader>\\t',
+        '<leader>tt',
         function() require("FTerm").toggle() end,
         mode = "n",
         desc = "fterm toogle"
       },
       {
-        '<leader>\\g',
+        '<leader>tg',
         function() require("FTerm").scratch({cmd = 'lazygit'}) end,
         mode = "n",
         silent = true,
         desc = "open lazygit"
-      },
-      {
-        '<leader>\\i',
-        function() require("FTerm").scratch({cmd = 'ipython'}) end,
-        mode = "n",
-        silent = true,
-        desc = "open ipyhton"
       }
     }
   }

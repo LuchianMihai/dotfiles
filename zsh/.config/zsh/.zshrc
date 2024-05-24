@@ -26,6 +26,11 @@ HISTSIZE=1000
 
 alias v="nvim"
 
+# make gnome-control-center available on Hyprland
+if [ "$XDG_SESSION_DESKTOP" = "Hyprland" ]; then
+  alias gnome-control-center="XDG_CURRENT_DESKTOP=gnome gnome-control-center"
+fi
+
 # not really plan to use svn outside Blue Streamline, can stay here
 alias svn="svn --config-dir \"$XDG_CONFIG_HOME\"/subversion"
 

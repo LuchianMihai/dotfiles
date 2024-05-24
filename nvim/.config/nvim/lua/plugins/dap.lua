@@ -12,7 +12,6 @@ return {
           comented = true,
           virt_text_pos = 'eol'
         },
-        config = true
       }
     },
 

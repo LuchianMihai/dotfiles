@@ -15,7 +15,25 @@ return {
         accept = true,
       },
     },
-    enabled = false
+    enabled = true
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "copilot.lua" }, -- or github/copilot.vim
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    opts = {
+      debug = true, -- Enable debugging
+      window = {
+        layout = 'float',
+        border = 'rounded',
+        width = 0.8,
+        height = 0.8,
+      }
+    },
+    -- See Commands section for default commands if you want to lazy load on them
   },
   {
     "jackMort/ChatGPT.nvim",
@@ -23,7 +41,6 @@ return {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
     },
     opts = {
       popup_input = {
@@ -38,9 +55,5 @@ return {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    config = function()
-      require("codeium").setup({
-      })
-    end
   },
 }

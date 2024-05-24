@@ -35,7 +35,7 @@ return {
         ['<CR>'] = require'cmp'.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
       sources = require'cmp'.config.sources({
-        { name = 'codeium' },
+        -- { name = 'codeium' },
         { name = 'nvim_lsp' },
         -- { name = 'luasnip' },
         -- { name = 'buffer' },
@@ -48,7 +48,7 @@ return {
             nvim_lsp = "[LSP]",
             luasnip = "[LuaSnip]",
             nvim_lua = "[Lua]",
-            codeium =  "[AI]"
+            -- codeium =  "[AI]"
           })[entry.source.name]
           return vim_item
         end,
