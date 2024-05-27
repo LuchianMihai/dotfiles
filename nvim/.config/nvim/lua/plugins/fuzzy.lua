@@ -4,10 +4,16 @@ return {
     "ibhagwan/fzf-lua",
     enabled = false,
     keys = {
-      { '<leader>ff', function() require("fzf-lua").files() end, desc = "FzfLua find files" },
-      { '<leader>fb', function() require("fzf-lua").buffers() end, desc = "FzfLua find buffers" },
+      { '<leader>ff',   function() require("fzf-lua").files() end, desc = "FzfLua find files" },
+      { '<leader>fb',   function() require("fzf-lua").buffers() end, desc = "FzfLua find buffers" },
+
+      { '<leader>lr',   function() require("fzf-lua").lsp_refences() end, desc = "FzfLua lsp references" },
+      { '<leader>lds',  function() require("fzf-lua").lsp_document_symbols() end, desc = "FzfLua lsp document symbols" },
+
     },
-    opts = {},
+    opts = {
+      {'telescope'}
+    },
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -48,7 +54,8 @@ return {
     keys = {
       { '<leader>ff', function() require("telescope.builtin").find_files() end, desc = "Telescope find files" },
       { '<leader>fb', function() require("telescope.builtin").buffers() end, desc = "Telescope buffers" },
-      { '<leader>fd', function() require("telescope").extensions.file_browser.file_browser() end, desc = "Telescope file browser" }
+
+      { '<leader>lds', function() require("telescope.builtin").lsp_document_symbols() end, desc = "Telescope file browser" }
     }
   }
 }

@@ -8,13 +8,11 @@ return {
   keys = {
     -- Global mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functionsls
-    { '<leader>le', function() vim.diagnostic.openfloat() end,  mode = 'n', desc = "lsp diagnostics open float"},
-    { '[d',       function() vim.diagnostic.goto_prev() end,  mode = 'n', desc = "lsp diagnostics prev"},
-    { ']d',       function() vim.diagnostic.goto_next() end,  mode = 'n', desc = "lsp diagnostics next"},
-    { '<leader>lq', function() vim.diagnostic.setloclist() end, mode = 'n', desc = "lsp diagnostics setloclist"},
-    { '<leader>la', function() vim.cmd('LspStart') end, mode = 'n', desc = "lsp manually start language server protocol"},
-
-
+    { '<leader>le',   function() vim.diagnostic.openfloat() end,  mode = 'n', desc = "lsp diagnostics open float"},
+    { '[d',           function() vim.diagnostic.goto_prev() end,  mode = 'n', desc = "lsp diagnostics prev"},
+    { ']d',           function() vim.diagnostic.goto_next() end,  mode = 'n', desc = "lsp diagnostics next"},
+    { '<leader>lq',   function() vim.diagnostic.setloclist() end, mode = 'n', desc = "lsp diagnostics setloclist"},
+    { '<leader>la',   function() vim.cmd('LspStart') end, mode = 'n', desc = "lsp manually start language server protocol"},
   },
 
   config = function()

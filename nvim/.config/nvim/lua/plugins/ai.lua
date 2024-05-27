@@ -15,7 +15,7 @@ return {
         accept = true,
       },
     },
-    enabled = true
+    enabled = false
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",

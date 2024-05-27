@@ -7,7 +7,8 @@ return {
       vim.opt.timeoutlen = 300
     end,
     opts = {
-      window = {
+      preset = "modern",
+      win = {
         border = "rounded"
       }
     }

@@ -39,6 +39,7 @@ vim.api.nvim_create_autocmd(
       }
       -- TODO: change to vim.keymap.set
       vim.keymap.set('t', '<C-n>', '<C-\\><C-n>', opts)
+      -- vim.keymap.set('t', '<leader>', '<C-\\><C-n><leader>', opts)
       -- vim.api.nvim_buf_set_keymap(0, 't', '<C-w>h', '<C-\\><C-n><C-w>h', opts)
       -- vim.api.nvim_buf_set_keymap(0, 't', '<C-w>j', '<C-\\><C-n><C-w>j', opts)
       -- vim.api.nvim_buf_set_keymap(0, 't', '<C-w>k', '<C-\\><C-n><C-w>k', opts)

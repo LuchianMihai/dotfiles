@@ -52,3 +52,11 @@ export MAIL="${XDG_DATA_HOME}/Mail"
 export EDITOR="nvim"
 
 export GOPATH="${XDG_DATA_HOME}/go"
+
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export DOTNET_CLI_HOME="${XDG_DATA_HOME}/dotnet"
+
+# make gnome-control-center available on Hyprland
+if [ "$XDG_SESSION_DESKTOP" = "Hyprland" ]; then
+  alias gnome-control-center="XDG_CURRENT_DESKTOP=gnome gnome-control-center"
+fi
