@@ -18,7 +18,6 @@ return {
   config = function()
     -- Setup language servers.
     local lspconfig = require('lspconfig')
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
     require('lspconfig.ui.windows').default_options.border = 'rounded'
@@ -83,8 +82,7 @@ return {
         "clangd",
         "--background-index",
         "--clang-tidy",
-      },
-      capabilities = require'cmp_nvim_lsp'.default_capabilities()
+      }
     }
 
     lspconfig.lua_ls.setup {
@@ -116,8 +114,7 @@ return {
           client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
         end
         return true
-      end,
-      capabilities = capabilities
+      end
     }
 
   end

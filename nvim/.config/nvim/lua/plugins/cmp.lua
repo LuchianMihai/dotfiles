@@ -1,15 +1,17 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    enabled = false,
     dependencies = {
       {
         "hrsh7th/cmp-nvim-lsp"
       },
       {
         "saadparwaiz1/cmp_luasnip",
+        enabled = false,
         dependencies = {
           --- Dependency to local instance of L3MON4D3/LuaSnip
-          "LuaSnip"
+          "L3MON4D3/LuaSnip"
         }
       }
     },
@@ -55,8 +57,5 @@ return {
         fields = { "abbr", "kind", "menu" },
       },
     }
-  },
-  {
-    "L3MON4D3/LuaSnip",
-  },
+  }
 }

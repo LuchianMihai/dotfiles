@@ -19,6 +19,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    enabled = false,
     branch = "canary",
     dependencies = {
       { "copilot.lua" }, -- or github/copilot.vim
@@ -51,6 +52,7 @@ return {
   },
   {
     "Exafunction/codeium.nvim",
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
