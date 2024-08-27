@@ -4,3 +4,6 @@
 [submodule "repos/arc-openbox"]
 	path = repos/arc-openbox
 	url = https://github.com/dglava/arc-openbox
+[submodule "hypr/.config/ags"]
+	path = hypr/.config/ags
+	url = https://github.com/LuchianMihai/ags-config
